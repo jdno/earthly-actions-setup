@@ -1,7 +1,5 @@
 VERSION 0.8
 
-PROJECT earthly-technologies/core
-
 ARG EARTHLY_LIB_VERSION=3.0.1
 IMPORT github.com/earthly/lib/utils/git:$EARTHLY_LIB_VERSION AS git
 

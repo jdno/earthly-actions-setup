@@ -78,3 +78,7 @@ The action can be configured with the following arguments:
 - `prerelease` (optional) - allow prerelease versions.
 - `use-cache` (optional) - whether to use the cache to store earthly or not.
 - `github-token` (optional) - GitHub token for fetching earthly version list. Recommended to avoid GitHub API ratelimit.
+
+## Acknowledgements
+
+This repository was forked from [earthly/actions-setup](https://github.com/earthly/actions-setup) after Earthly [deprecated the Earthly project](https://earthly.dev/blog/shutting-down-earthfiles-cloud/). Big thanks to them for building Earthly!

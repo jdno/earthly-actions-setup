@@ -12,9 +12,8 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/earthly/actions-setup.git"
+    "url": "git+https://github.com/jdno/earthly-actions-setup.git"
   },
-  "author": "earthly technologies",
   "keywords": [
     "actions",
     "earthly",
