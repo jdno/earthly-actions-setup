@@ -54,7 +54,8 @@ async function run() {
       // only grab the version from the api if the version provided by the user
       // doesn't appear to be a valid semver
       const prerelease = core.getInput("prerelease").toUpperCase() === 'TRUE';
-      core.info(`Configured range: ${range}; allow prerelease: ${prerelease}`);
+      const useCache = core.getInput("use-cache").toUpperCase() === 'TRUE';
+      core.info(`Configured range: ${range}; allow prerelease: ${prerelease}; use cache: ${useCache}`);
       const version = await getVersionObject(range, prerelease);
       tag_name = version.tag_name;
     }
@@ -101,9 +102,8 @@ async function run() {
         core.info(`Successfully deleted pre-existing ${installationDir}`);
       });
 
-    const buildURL = `https://github.com/earthly/earthly/releases/download/${
-      tag_name
-    }/${pkgName}-${releasePlatform}-${releaseArch}${IS_WINDOWS ? ".exe" : ""}`;
+    const buildURL = `https://github.com/earthly/earthly/releases/download/${tag_name
+      }/${pkgName}-${releasePlatform}-${releaseArch}${IS_WINDOWS ? ".exe" : ""}`;
 
     core.info(`downloading ${buildURL}`);
     const downloaded = await tc.downloadTool(buildURL, installationPath);
