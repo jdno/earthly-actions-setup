@@ -1,8 +1,10 @@
 # Setup Earthly - GitHub Action
 
-This repository contains an action for use with GitHub Actions, which installs [earthly](https://github.com/earthly/earthly) with a semver-compatible version.
+This repository contains an action for use with GitHub Actions, which installs
+[earthly](https://github.com/earthly/earthly) with a semver-compatible version.
 
-The package is installed into `/home/runner/.earthly` (or equivalent on Windows) and the `bin` subdirectory is added to the PATH.
+The package is installed into `/home/runner/.earthly` (or equivalent on Windows)
+and the `bin` subdirectory is added to the PATH.
 
 ## Usage
 
@@ -68,17 +70,22 @@ Install a version that adheres to a semver range
 
 You can perform a local test by running `earthly +all`.
 
-It is also possible to use [act](https://github.com/nektos/act) to test the contents of the github actions config.
+It is also possible to use [act](https://github.com/nektos/act) to test the
+contents of the github actions config.
 
 ## Configuration
 
 The action can be configured with the following arguments:
 
-- `version` - The version of earthly to install. Default is `latest`. Accepts semver style values.
+- `version` - The version of earthly to install.
+  Default is `latest`. Accepts semver style values.
 - `prerelease` (optional) - allow prerelease versions.
 - `use-cache` (optional) - whether to use the cache to store earthly or not.
-- `github-token` (optional) - GitHub token for fetching earthly version list. Recommended to avoid GitHub API ratelimit.
+- `github-token` (optional) - GitHub token for fetching earthly version list.
+  Recommended to avoid GitHub API ratelimit.
 
 ## Acknowledgements
 
-This repository was forked from [earthly/actions-setup](https://github.com/earthly/actions-setup) after Earthly [deprecated the Earthly project](https://earthly.dev/blog/shutting-down-earthfiles-cloud/). Big thanks to them for building Earthly!
+This repository was forked from [earthly/actions-setup](https://github.com/earthly/actions-setup)
+after Earthly [deprecated the Earthly project](https://earthly.dev/blog/shutting-down-earthfiles-cloud/).
+Big thanks to them for building Earthly!
