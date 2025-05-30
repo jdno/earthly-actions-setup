@@ -6,6 +6,8 @@ This repository contains an action for use with GitHub Actions, which installs
 The package is installed into `/home/runner/.earthly` (or equivalent on Windows)
 and the `bin` subdirectory is added to the PATH.
 
+This is a fork of the now unmaintained [earthly/actions-setup] action.
+
 ## Usage
 
 Full example:
@@ -24,7 +26,7 @@ jobs:
     name: example earthly test
     runs-on: ubuntu-latest
     steps:
-      - uses: earthly/actions-setup@v1
+      - uses: jdno/earthly-actions-setup@v2.0.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           version: "latest" # or pin to an specific version, e.g. "0.8.1"
@@ -41,7 +43,7 @@ Install the latest version of earthly:
 
 ```yaml
 - name: Install earthly
-  uses: earthly/actions-setup@v1
+  uses: jdno/earthly-actions-setup@v2.0.0
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -50,7 +52,7 @@ Install a specific version of earthly:
 
 ```yaml
 - name: Install earthly
-  uses: earthly/actions-setup@v1
+  uses: jdno/earthly-actions-setup@v2.0.0
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     version: 0.8.1
@@ -60,7 +62,7 @@ Install a version that adheres to a semver range
 
 ```yaml
 - name: Install earthly
-  uses: earthly/actions-setup@v1
+  uses: jdno/earthly-actions-setup@v2.0.0
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     version: ^0.8.0
@@ -68,10 +70,7 @@ Install a version that adheres to a semver range
 
 ### Testing
 
-You can perform a local test by running `earthly +all`.
-
-It is also possible to use [act](https://github.com/nektos/act) to test the
-contents of the github actions config.
+You can perform a local test by running `earthly +checks`.
 
 ## Configuration
 
@@ -86,6 +85,8 @@ The action can be configured with the following arguments:
 
 ## Acknowledgements
 
-This repository was forked from [earthly/actions-setup](https://github.com/earthly/actions-setup)
-after Earthly [deprecated the Earthly project](https://earthly.dev/blog/shutting-down-earthfiles-cloud/).
+This repository was forked from [earthly/actions-setup] after Earthly
+[deprecated the Earthly project](https://earthly.dev/blog/shutting-down-earthfiles-cloud/).
 Big thanks to them for building Earthly!
+
+[earthly/actions-setup]: https://github.com/earthly/actions-setup
