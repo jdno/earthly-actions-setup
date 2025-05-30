@@ -13,6 +13,11 @@ export const restoreCache = async (
     return false;
   }
 
+  if (core.getInput('use-cache').toUpperCase() !== "TRUE") {
+    core.info(`skipping cache restore as use-cache is not true`);
+    return false;
+  }
+
   const platform = process.env.RUNNER_OS;
   const arch = process.env.RUNNER_ARCH;
 

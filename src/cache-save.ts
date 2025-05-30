@@ -31,7 +31,7 @@ export const cacheBinary = async () => {
     return;
   }
 
-  if (core.getInput('use-cache') !== "true") {
+  if (core.getInput('use-cache').toUpperCase() !== "TRUE") {
     core.info(`skipping cache save as use-cache is not true`);
     return;
   }

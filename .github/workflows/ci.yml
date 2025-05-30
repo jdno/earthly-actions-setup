@@ -20,6 +20,7 @@ jobs:
       - name: Install earthly
         uses: ./
         with:
+          use-cache: false
           version: 0.8
 
       - name: Export targets

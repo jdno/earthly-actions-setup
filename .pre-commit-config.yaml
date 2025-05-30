@@ -14,8 +14,10 @@ repos:
       - id: check-added-large-files
       - id: check-case-conflict
       - id: end-of-file-fixer
+        exclude: ^dist/
       - id: trailing-whitespace
         args: [--markdown-linebreak-ext=md]
+        exclude: ^dist/
   - repo: https://github.com/hongkongkiwi/earthly-precommit
     rev: v0.0.5
     hooks:
