@@ -22,6 +22,7 @@ pre-commit:
     WAIT
         BUILD +prettier
     END
+    BUILD +diff-artifact
     BUILD +lint-markdown
     BUILD +lint-yaml
     BUILD +test-action
