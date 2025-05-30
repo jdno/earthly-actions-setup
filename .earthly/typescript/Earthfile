@@ -44,11 +44,11 @@ DIFF_ARTIFACT:
 
 LINT:
     FUNCTION
-    
+
     DO +CONTAINER
 
     # Copy the configuration files into the container
-    COPY .eslintrc.cjs .
+    COPY eslint.config.cjs .
 
     # Run the linting command
     RUN npm run-script lint
