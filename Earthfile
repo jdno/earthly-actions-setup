@@ -6,7 +6,7 @@ VERSION 0.8
 # overwriting each other's changes.
 checks:
     BUILD +build
-    BUILD +diff-artifact
+    BUILD +check-artifact
     BUILD +format-json --FIX="false"
     BUILD +format-markdown --FIX="false"
     BUILD +format-yaml --FIX="false"
@@ -22,7 +22,7 @@ pre-commit:
     WAIT
         BUILD +prettier
     END
-    BUILD +diff-artifact
+    BUILD +check-artifact
     BUILD +lint-markdown
     BUILD +lint-yaml
     BUILD +test-action
@@ -31,7 +31,7 @@ pre-commit:
 build:
     DO ./.earthly/typescript+BUILD
 
-diff-artifact:
+check-artifact:
     DO ./.earthly/typescript+DIFF_ARTIFACT
 
 format-json:
