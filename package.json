@@ -33,13 +33,15 @@
     "semver": "^7.6.0"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.27.0",
     "@types/node": "^22.0.0",
     "@types/semver": "^7.5.8",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",
     "@vercel/ncc": "^0.38.1",
     "@vitest/coverage-v8": "^1.4.0",
-    "eslint": "^8.57.0",
+    "eslint": "^9.0.0",
     "prettier": "^3.2.5",
     "typescript": "^5.4.3",
     "vitest": "^1.4.0"
